@@ -22,6 +22,14 @@ hystrix :
 
 product:
   ribbon:
-    listOfServers: localhost:8082, localhost:7777 # Ribbon 에서 호출 할 Server URL 목록 RoundRobin 방식으로 호출
+#    listOfServers: localhost:8082, localhost:7777 # Ribbon 에서 호출 할 Server URL 목록 RoundRobin 방식으로 호출
     MaxAutoRetries: 0  # 재시도 횟수 ( 실패한 서버외 다른 서버 ) : retry libraries 필요
     MaxAutoRetriesNextServer: 1 # 주의: Hystrix가  Ribbon을 감싸고 있을 경우 Retry를 설정하더라도 즉시 에러를 반환 한다.
+
+
+eureka:
+  instance:
+    prefer-ip-address: true # eureka 서버에 hostname 대신 IP로 등록한다
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/},${EUREKA_URL:http://localhost:8762/eureka/}  # eureka server 서비스 등록
