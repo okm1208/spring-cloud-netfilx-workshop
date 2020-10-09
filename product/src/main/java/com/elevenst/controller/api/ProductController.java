@@ -15,14 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
     @GetMapping("/{productId}")
     public String getProduct(@PathVariable String productId){
-        try{
-            Thread.sleep(2000);
-        }catch(InterruptedException ie){
-            ie.printStackTrace();
-        }
-        System.out.println("Called product id = "+productId);
+        System.out.println("/products/"+productId + "called:");
         return "[product id = "+productId +" at "+System.currentTimeMillis() + "]";
-//        throw new RuntimeException("I/O Exception");
     }
 
 }

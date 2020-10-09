@@ -3,6 +3,7 @@ package com.elevenst.service.impl;
 import com.elevenst.service.ProductRemoteService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,7 +13,8 @@ import org.springframework.web.client.RestTemplate;
  */
 @Service
 public class ProductRemoteServiceImpl implements ProductRemoteService {
-    public static final String URL = "http://localhost:8082/products/";
+    public static final String URL = "http://product/products/";
+
     @Autowired
     private RestTemplate restTemplate;
 
