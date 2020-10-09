@@ -10,4 +10,4 @@ eureka:
     prefer-ip-address: true   # eureka 서버에 hostname 대신 IP를 사용 하는 옵션
   client:
     service-url:
-      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/},${EUREKA_URL:http://localhost:8762/eureka/}
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}

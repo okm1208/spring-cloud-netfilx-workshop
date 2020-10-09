@@ -1,5 +1,6 @@
 package com.elevenst.service.impl;
 
+import com.elevenst.service.FeignProductRemoteService;
 import com.elevenst.service.ProductRemoteService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,6 @@ public class ProductRemoteServiceImpl implements ProductRemoteService {
 
     @Autowired
     private RestTemplate restTemplate;
-
     @Override
     @HystrixCommand(fallbackMethod = "getProductInfoFallback")
     public String getProductInfo(String productId) {
