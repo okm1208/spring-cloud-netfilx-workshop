@@ -16,8 +16,8 @@ public class ProductController {
     @GetMapping("/{productId}")
     public String getProduct(@PathVariable String productId){
         System.out.println("/products/"+productId + "called:");
-//        return "[product id = "+productId +" at "+System.currentTimeMillis() + "]";
-        throw new RuntimeException("product failed");
+        return "[product id = "+productId +" at "+System.currentTimeMillis() + "]";
+//        throw new RuntimeException("product failed");
     }
 
 }
